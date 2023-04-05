@@ -1,0 +1,8 @@
+.url-input {
+  width: 300px;
+}
+
+.center-pos {
+  display: flex;
+  justify-content: center;
+}
