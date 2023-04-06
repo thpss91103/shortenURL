@@ -1,6 +1,11 @@
+{{#if url}}
+<div class="alert alert-info mt-5 center-pos" role="alert">
+  <span class="mr-2">Success! Please use this link:</span> <a href="{{ shorterLink }}">{{ url }}</a>
+</div>
+{{/if}}
 <form method="POST" action="/" >
   <div class="form-floating mt-5 center-pos">
-    <input type="text" class="form-control url-input" id="url" name="url" placeholder="name@example.com">
+    <input type="text" class="form-control url-input" id="url" name="url" placeholder="name@example.com" value="{{ url }}">
     <label for="url" class="center-pos">Enter URL</label>
   </div>
   <div class="center-pos mt-3">
