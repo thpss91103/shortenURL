@@ -1,19 +1,45 @@
 <form method="POST" action="/">
 {{#if url}}
-<div class="alert alert-info mt-5 center-pos" role="alert">
-  <span class="mr-2">Success! Please use this link:</span> <a href="{{ url }}">{{ shorterLink }}</a>
+<div class="center-pos">
+  <div class="alert alert-info mt-4 alert-pos" role="alert">
+    <span class="mr-2">Success! Please use this link:</span>
+    <div>
+      <a href="{{ url }}" id="url">{{ shorterLink }}</a><i class="fa-solid fa-copy copy-icon" id="copy-icon"></i>
+    </div>
+  </div>
 </div>
+<div class="center-pos" id="success-alert"></div>
 {{/if}}
 {{#if errorMessage}}
 <div class="alert alert-danger mt-5 center-pos" role="alert">
   <span class="mr-2">{{ errorMessage }}</span>
 </div>
 {{/if}}
-  <div class="form-floating mt-5 center-pos">
+  <div class="form-floating mt-3 center-pos">
     <input type="text" class="form-control url-input" id="url" name="url" placeholder="name@example.com" value="{{ url }}">
     <label for="url" class="center-pos">Enter URL</label>
   </div>
   <div class="center-pos mt-3">
     <button type="submit" class="btn btn-info ">Shorten</button> 
+    <a href="/" class="btn btn-secondary btn-back">Back</a>
   </div>
 </form>
+
+<script>
+  const url = document.querySelector('#url')
+  const copyIcon = document.querySelector('#copy-icon')
+  const successAlert = document.querySelector('#success-alert')
+
+  copyIcon.addEventListener('click', () => {
+    let urlText = url.textContent
+    navigator.clipboard.writeText(`${urlText}`)
+    
+    let htmlContent = `
+      <div class="center-pos">
+        <div class="alert alert-success alert-pos" role="alert">
+          <span class="mr-2">Success copied!</span>
+        </div>
+      </div>`
+    successAlert.innerHTML = htmlContent
+  })
+</script>

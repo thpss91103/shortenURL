@@ -2,7 +2,28 @@
   width: 300px;
 }
 
+.alert-pos {
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.copy-icon {
+  margin-left: 5px;
+  color: #1A3148;
+  cursor: pointer;
+}
+
+.copy-icon:hover {
+  color: #55B2E6;
+}
+
 .center-pos {
   display: flex;
   justify-content: center;
+}
+
+.btn-back {
+  margin-left: 5px;
 }
