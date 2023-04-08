@@ -5,6 +5,9 @@ const shortenURLSchema = new Schema({
     type: String,
     required: true
   },
+  shorterLink: {
+    type: String,
+  },
   randonString: {
     type: String,
   }
