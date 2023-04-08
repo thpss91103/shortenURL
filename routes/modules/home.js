@@ -11,6 +11,11 @@ router.post('/', (req, res) => {
   const url = req.body.url
   let string = randonString()
   const shorterLink = req.headers.origin + "/" + string
+  const errorMessage = 'Please inter valid URL like https://...'
+
+  if (url.trim() === "") {
+    return res.render('index', { errorMessage })
+  }
 
   function checkString() {
     shortenURL.findOne({ string }).then((result) => {
@@ -37,5 +42,13 @@ router.post('/', (req, res) => {
     }
   })
 })
+
+router.get("/:string", (req, res) => {
+  const string = req.params.string;
+  shortenURL.findOne({ randonString: string })
+    .lean()
+    .then((data) => res.redirect(data.url))
+    .catch((error) => console.log(error));
+});
 
 module.exports = router
