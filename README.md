@@ -1,7 +1,7 @@
 # 我的餐廳清單
 ### 介紹
 可以將長網址轉換成短網址。
-![Restaurant](https://github.com/thpss91103/ResraurantList/blob/main/public/image/indexImg.png)
+![Restaurant](https://github.com/thpss91103/shortenURL/blob/main/public/image/indexImg.png)
 ### 功能
 1. 使用者可以輸入網址
 2. 點擊Shorten可以轉換成短網址
