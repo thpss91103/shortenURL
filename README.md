@@ -1,4 +1,4 @@
-# 我的餐廳清單
+# 短網址生產器
 ### 介紹
 可以將長網址轉換成短網址。
 ![Restaurant](https://github.com/thpss91103/shortenURL/blob/main/public/image/indexImg.png)
